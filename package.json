@@ -1,0 +1,20 @@
+{
+  "name": "acr-protocol-local-elevation",
+  "version": "0.9.2",
+  "description": "ACR Protocol Local Elevation Substrate — Cloudflare Agents DO, PartyKit, Iroh QUIC P2P, Y-Sweet CRDT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "yjs": "^13.6.32"
+  }
+}

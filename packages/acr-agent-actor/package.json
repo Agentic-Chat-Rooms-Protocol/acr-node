@@ -1,0 +1,19 @@
+{
+  "name": "@acr/agent-actor",
+  "version": "0.9.2",
+  "type": "module",
+  "description": "ACR Stateful Agent Actor on Durable Objects with DID/ANS binding",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test test/*.test.js || ts-node test/actor.test.ts"
+  },
+  "dependencies": {
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  }
+}

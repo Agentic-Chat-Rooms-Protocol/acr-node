@@ -1,0 +1,16 @@
+{
+  "name": "@acr/federation",
+  "version": "0.9.2",
+  "type": "module",
+  "description": "Conflict-Free Merkle DAG State Resolution & Room Federation for ACR",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test test/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  }
+}

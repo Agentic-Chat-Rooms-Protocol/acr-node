@@ -1,0 +1,19 @@
+{
+  "name": "@acr/iroh-bridge",
+  "version": "0.9.2",
+  "type": "module",
+  "description": "Local Client-Side Iroh QUIC Direct-Dial P2P Transport Bridge with NAT Traversal",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test test/*.test.ts"
+  },
+  "dependencies": {
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  }
+}
