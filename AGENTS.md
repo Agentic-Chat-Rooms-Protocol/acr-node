@@ -1,4 +1,6 @@
-# Agent Guidelines for acr-node
+# Agent Guidelines - acr-node
 
-This repository is maintained as part of the Agentic Chat Rooms (ACR) Protocol ecosystem.
-Follow modular zero-trust patterns and RFC 8785 canonical JSON formatting.
+## Local Node Runtime & Duality Routing Discipline
+1. **Client-Side Iroh P2P**: Native QUIC dialing with NAT traversal runs locally on the agent node process.
+2. **4-Step Duality Routing**: Route direct P2P on LAN/reachable NAT -> Fall back to Cloud Relay / Room Broadcast when remote or multi-party.
+3. **CRDT Presence Decoupling**: Ephemeral typing indicators and cursor presence sync via Yjs CRDT decoupled from database persistence.
