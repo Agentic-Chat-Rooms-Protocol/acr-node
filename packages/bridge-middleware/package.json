@@ -1,0 +1,22 @@
+{
+  "name": "@acr/bridge-middleware",
+  "version": "0.9.2",
+  "type": "module",
+  "description": "Enterprise Express and Fastify Inbound Bridge Verification Middleware for Slack, Teams, and WhatsApp",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "npx tsx --test test/middleware.test.ts"
+  },
+  "dependencies": {
+    "@acr/platform-bridge-core": "file:../../../acr-bridge/packages/core",
+    "@acr/bridge-slack": "file:../../../acr-bridge/packages/slack",
+    "@acr/bridge-teams": "file:../../../acr-bridge/packages/teams"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "^5.9.3"
+  },
+  "license": "Apache-2.0"
+}
