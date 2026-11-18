@@ -1,0 +1,68 @@
+{
+  "remote": {
+    "accept": [
+      "https://mcp.agentchatrooms.dev/mcp",
+      "https://MCP.AgentChatRooms.Dev/mcp",
+      "https://mcp.agentchatrooms.dev:443/mcp"
+    ],
+    "reject": [
+      "http://mcp.agentchatrooms.dev/mcp",
+      "https://mcp.agentchatrooms.dev.evil.com/mcp",
+      "https://mcp.agentchatrooms.dev@evil.com/mcp",
+      "https://user:pw@mcp.agentchatrooms.dev/mcp",
+      "https://mcp.agentchatrooms.dev:8443/mcp",
+      "https://mcp.agentchatrooms.dev/mcp/",
+      "https://mcp.agentchatrooms.dev/%6dcp",
+      "https://mcp.agentchatrooms.dev/mcp?next=//evil.com",
+      "https://mcp.agentchatrooms.dev/mcp?",
+      "https://mcp.agentchatrooms.dev/mcp#frag",
+      "https://mcp.agentchatrooms.dev./mcp",
+      "//mcp.agentchatrooms.dev/mcp",
+      ""
+    ]
+  },
+  "local": {
+    "accept": [
+      { "input": "http://127.0.0.1:20443", "expected": "http://127.0.0.1:20443" },
+      { "input": "http://127.0.0.1:20443/", "expected": "http://127.0.0.1:20443" },
+      { "input": "http://127.0.0.1", "expected": "http://127.0.0.1:20443" },
+      { "input": "http://localhost:20443", "expected": "http://127.0.0.1:20443" },
+      { "input": "http://localhost", "expected": "http://127.0.0.1:20443" },
+      { "input": "http://localhost:20499/", "expected": "http://127.0.0.1:20499" },
+      { "input": "http://[::1]:20443", "expected": "http://[::1]:20443" },
+      { "input": "http://[::1]:31000/", "expected": "http://[::1]:31000" }
+    ],
+    "reject": [
+      "https://127.0.0.1:20443",
+      "http://0.0.0.0:20443",
+      "http://192.168.1.5:20443",
+      "http://localhost.evil.com:20443",
+      "http://127.0.0.1.evil.com:20443",
+      "http://2130706433:20443",
+      "http://0x7f.0.0.1:20443",
+      "http://127.1:20443",
+      "http://[::ffff:127.0.0.1]:20443",
+      "http://user:pw@127.0.0.1:20443",
+      "http://127.0.0.1:80",
+      "http://127.0.0.1:65536",
+      "http://127.0.0.1:70000",
+      "http://127.0.0.1:20443/mcp",
+      "http://127.0.0.1:20443?next=//evil.com",
+      "http://127.0.0.1:20443/?next=http://evil.com",
+      "http://127.0.0.1:20443#frag",
+      "http://127.0.0.1:20443/#frag",
+      "//127.0.0.1:20443",
+      ""
+    ]
+  },
+  "resolve": [
+    { "name": "Free, no credential", "override": "", "scopes": [], "localUrl": "http://127.0.0.1:20443", "mode": "local", "url": "http://127.0.0.1:20443" },
+    { "name": "Community token", "override": "", "scopes": ["acr:rooms"], "localUrl": "http://127.0.0.1:20443", "mode": "local", "url": "http://127.0.0.1:20443" },
+    { "name": "Partial scope", "override": "", "scopes": ["acr:cloud:pro"], "localUrl": "http://127.0.0.1:20443", "mode": "local", "url": "http://127.0.0.1:20443" },
+    { "name": "Paid", "override": "", "scopes": ["acr:rooms", "acr:cloud:pro"], "localUrl": "http://127.0.0.1:20443", "mode": "remote", "url": "https://mcp.agentchatrooms.dev/mcp" },
+    { "name": "Paid user forces local", "override": "local", "scopes": ["acr:rooms", "acr:cloud:pro"], "localUrl": "http://localhost:20443", "mode": "local", "url": "http://127.0.0.1:20443" },
+    { "name": "Free user forces remote", "override": "remote", "scopes": [], "localUrl": "http://127.0.0.1:20443", "mode": "remote", "url": "https://mcp.agentchatrooms.dev/mcp" },
+    { "name": "Invalid local URL, paid", "override": "", "scopes": ["acr:rooms", "acr:cloud:pro"], "localUrl": "http://192.168.1.5:20443", "expectError": true },
+    { "name": "Unknown override", "override": "cloud", "scopes": [], "localUrl": "http://127.0.0.1:20443", "expectError": true }
+  ]
+}

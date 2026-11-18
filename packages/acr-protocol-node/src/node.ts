@@ -1,14 +1,16 @@
-import { AcrAgentActor, AgentIdentity } from '@acr/agent-actor';
-import { AcrRoomParty } from '@acr/room-party';
-import { LocalIrohP2PNode } from '@acr/iroh-bridge';
-import { YSweetPresenceClient } from '@acr/presence-crdt';
-import { MerkleDAG } from '@acr/federation';
+import { AcrAgentActor, AgentIdentity } from '@acr-js/agent-actor';
+import { AcrRoomParty } from '@acr-js/room-party';
+import { LocalIrohP2PNode } from '@acr-js/iroh-bridge';
+import { YSweetPresenceClient } from '@acr-js/presence-crdt';
+import { MerkleDAG } from '@acr-js/federation';
 import { DualityRouter } from './duality-router.js';
+import { DEFAULT_LOCAL_URL, resolveLocalDaemonUrl } from './mcpendpoint.js';
 
 export interface NodeConfig {
   localAgentIdentity: AgentIdentity;
   irohPublicKey: string;
   presenceServerUrl?: string;
+  daemonUrl?: string;
 }
 
 export class AcrProtocolNode {
@@ -17,12 +19,16 @@ export class AcrProtocolNode {
   public readonly router: DualityRouter;
   public readonly dag: MerkleDAG;
   public readonly presenceClient?: YSweetPresenceClient;
+  public readonly daemonUrl: string;
   private rooms = new Map<string, AcrRoomParty>();
 
   constructor(config: NodeConfig) {
     this.localAgent = new AcrAgentActor(config.localAgentIdentity);
     this.irohNode = new LocalIrohP2PNode(config.irohPublicKey);
     this.dag = new MerkleDAG();
+    this.daemonUrl = config.daemonUrl
+      ? resolveLocalDaemonUrl(config.daemonUrl)
+      : resolveLocalDaemonUrl(DEFAULT_LOCAL_URL);
 
     if (config.presenceServerUrl) {
       this.presenceClient = new YSweetPresenceClient({

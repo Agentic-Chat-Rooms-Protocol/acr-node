@@ -1,6 +1,6 @@
 {
-  "name": "@acr/room-party",
-  "version": "0.9.2",
+  "name": "@acr-js/room-party",
+  "version": "1.0.0",
   "type": "module",
   "description": "Native PartyKit Room Broadcast Actor on Durable Objects with GAP-08 Consensus",
   "main": "dist/index.js",

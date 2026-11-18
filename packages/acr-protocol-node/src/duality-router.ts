@@ -1,6 +1,6 @@
-import { LocalIrohP2PNode } from '@acr/iroh-bridge';
-import { AcrRoomParty } from '@acr/room-party';
-import { YSweetPresenceClient } from '@acr/presence-crdt';
+import { LocalIrohP2PNode } from '@acr-js/iroh-bridge';
+import { AcrRoomParty } from '@acr-js/room-party';
+import { YSweetPresenceClient } from '@acr-js/presence-crdt';
 
 export type TransportPath = 'IROH_DIRECT_P2P' | 'ROOM_BROADCAST_FALLBACK' | 'CLOUD_RELAY_FALLBACK';
 

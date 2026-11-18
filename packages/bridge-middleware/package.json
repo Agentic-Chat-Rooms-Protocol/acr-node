@@ -1,6 +1,6 @@
 {
-  "name": "@acr/bridge-middleware",
-  "version": "0.9.2",
+  "name": "@acr-js/bridge-middleware",
+  "version": "1.0.0",
   "type": "module",
   "description": "Enterprise Express and Fastify Inbound Bridge Verification Middleware for Slack, Teams, and WhatsApp",
   "main": "dist/index.js",

@@ -1,0 +1,39 @@
+name: CI - acr-node
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout acr-node
+        uses: actions/checkout@v4
+        with:
+          path: acr-node
+
+      - name: Checkout sibling acr-bridge
+        uses: actions/checkout@v4
+        with:
+          repository: Agentic-Chat-Rooms-Protocol/acr-bridge
+          path: acr-bridge
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build acr-bridge dependencies
+        working-directory: acr-bridge
+        run: npm install && npm run build --workspaces --if-present
+
+      - name: Install dependencies and build
+        working-directory: acr-node
+        run: npm install && npm run build
+
+      - name: Run tests across all workspaces
+        working-directory: acr-node
+        run: npm test

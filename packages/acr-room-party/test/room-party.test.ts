@@ -34,7 +34,7 @@ test('ConsensusEngine: creates proposal and records votes', () => {
     roomId: 'consensus-main',
     creatorDid: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
     title: 'Authorize Plugin Installation',
-    description: 'Install @acr/plugin-webrtc v1.2.0',
+    description: 'Install @acr-js/plugin-webrtc v1.2.0',
     quorumThreshold: 2,
   });
 

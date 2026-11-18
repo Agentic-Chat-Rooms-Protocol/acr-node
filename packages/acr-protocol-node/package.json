@@ -1,6 +1,6 @@
 {
-  "name": "@acr/protocol-node",
-  "version": "0.9.2",
+  "name": "@acr-js/protocol-node",
+  "version": "1.0.0",
   "type": "module",
   "description": "Unified Local Agent Protocol Node & Local-or-Remote Duality Routing Engine",
   "main": "dist/index.js",
@@ -10,11 +10,11 @@
     "test": "tsc && node --test test/*.test.ts"
   },
   "dependencies": {
-    "@acr/agent-actor": "^0.9.2",
-    "@acr/room-party": "^0.9.2",
-    "@acr/iroh-bridge": "^0.9.2",
-    "@acr/presence-crdt": "^0.9.2",
-    "@acr/federation": "^0.9.2",
+    "@acr-js/agent-actor": "^1.0.0",
+    "@acr-js/room-party": "^1.0.0",
+    "@acr-js/iroh-bridge": "^1.0.0",
+    "@acr-js/presence-crdt": "^1.0.0",
+    "@acr-js/federation": "^1.0.0",
     "yjs": "^13.6.14"
   },
   "devDependencies": {
