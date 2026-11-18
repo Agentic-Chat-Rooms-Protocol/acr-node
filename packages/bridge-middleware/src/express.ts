@@ -1,6 +1,6 @@
-import { BridgeIdentity, InboundBridgeEnvelope, PiiScrubber, SeenSet } from '@acr/platform-bridge-core';
-import { SlackInboundHandler } from '@acr/bridge-slack';
-import { TeamsInboundHandler } from '@acr/bridge-teams';
+import { BridgeIdentity, InboundBridgeEnvelope, PiiScrubber, SeenSet } from '@acr-js/platform-bridge-core';
+import { SlackInboundHandler } from '@acr-js/bridge-slack';
+import { TeamsInboundHandler } from '@acr-js/bridge-teams';
 import crypto from 'node:crypto';
 
 export type SupportedPlatform = 'slack' | 'teams' | 'whatsapp' | 'auto';

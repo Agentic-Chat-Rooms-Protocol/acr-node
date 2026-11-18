@@ -10,9 +10,9 @@
     "test": "npx tsx --test test/middleware.test.ts"
   },
   "dependencies": {
-    "@acr/platform-bridge-core": "file:../../../acr-bridge/packages/core",
-    "@acr/bridge-slack": "file:../../../acr-bridge/packages/slack",
-    "@acr/bridge-teams": "file:../../../acr-bridge/packages/teams"
+    "@acr-js/platform-bridge-core": "file:../../../acr-bridge/packages/core",
+    "@acr-js/bridge-slack": "file:../../../acr-bridge/packages/slack",
+    "@acr-js/bridge-teams": "file:../../../acr-bridge/packages/teams"
   },
   "devDependencies": {
     "@types/node": "^22.20.1",

@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
-import { BridgeIdentity } from '@acr/platform-bridge-core';
+import { BridgeIdentity } from '@acr-js/platform-bridge-core';
 import {
   createBridgeExpressMiddleware,
   createBridgeFastifyHook,
